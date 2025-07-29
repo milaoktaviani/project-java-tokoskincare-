@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="212" pageHeight="556" columnWidth="172" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="22dbbe18-b3c8-43fd-86c6-4a056e371c97">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="jam1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbdetailorder.`iddetailorder` AS tbdetailorder_iddetailorder,
+     tbdetailorder.`idpembayaran` AS tbdetailorder_idpembayaran,
+     tbdetailorder.`idproduk` AS tbdetailorder_idproduk,
+     tbdetailorder.`namaproduk` AS tbdetailorder_namaproduk,
+     tbdetailorder.`harga` AS tbdetailorder_harga,
+     tbdetailorder.`qty` AS tbdetailorder_qty,
+     tbdetailorder.`total` AS tbdetailorder_total,
+     tbpembayaran.`idpembayaran` AS tbpembayaran_idpembayaran,
+     tbpembayaran.`kasir` AS tbpembayaran_kasir,
+     tbpembayaran.`idpelanggan` AS tbpembayaran_idpelanggan,
+     tbpembayaran.`namapelanggan` AS tbpembayaran_namapelanggan,
+     tbpembayaran.`diskon` AS tbpembayaran_diskon,
+     tbpembayaran.`total` AS tbpembayaran_total,
+     tbpembayaran.`bayar` AS tbpembayaran_bayar,
+     tbpembayaran.`kembali` AS tbpembayaran_kembali,
+     tbpembayaran.`tanggal` AS tbpembayaran_tanggal
+FROM
+     `tbdetailorder` tbdetailorder INNER JOIN `tbpembayaran` tbpembayaran ON tbdetailorder.`idpembayaran` = tbpembayaran.`idpembayaran`]]>
+	</queryString>
+	<field name="tbdetailorder_iddetailorder" class="java.lang.Integer"/>
+	<field name="tbdetailorder_idpembayaran" class="java.lang.String"/>
+	<field name="tbdetailorder_idproduk" class="java.lang.String"/>
+	<field name="tbdetailorder_namaproduk" class="java.lang.String"/>
+	<field name="tbdetailorder_harga" class="java.lang.Integer"/>
+	<field name="tbdetailorder_qty" class="java.lang.Integer"/>
+	<field name="tbdetailorder_total" class="java.lang.Integer"/>
+	<field name="tbpembayaran_idpembayaran" class="java.lang.String"/>
+	<field name="tbpembayaran_kasir" class="java.lang.String"/>
+	<field name="tbpembayaran_idpelanggan" class="java.lang.String"/>
+	<field name="tbpembayaran_namapelanggan" class="java.lang.String"/>
+	<field name="tbpembayaran_diskon" class="java.lang.Integer"/>
+	<field name="tbpembayaran_total" class="java.lang.Integer"/>
+	<field name="tbpembayaran_bayar" class="java.lang.Integer"/>
+	<field name="tbpembayaran_kembali" class="java.lang.Integer"/>
+	<field name="tbpembayaran_tanggal" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="59" width="172" height="10" uuid="f5a2b6ae-a790-45b8-93d5-74fe18878eca"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="6"/>
+				</textElement>
+				<text><![CDATA[Jl. Manhattan No. 23, Gotham City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="172" height="15" uuid="181e358b-ad1d-4641-9959-03f4c8fab7cd"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ethereal Skincare]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="69" width="172" height="10" uuid="ee108465-e7d8-4181-bf71-5bdd689f80f7"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="6"/>
+				</textElement>
+				<text><![CDATA[Telp. 08123456789]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="83" width="172" height="1" uuid="d0a2d709-2226-4864-a818-5c6e07d773fb"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="67" y="3" width="35" height="35" uuid="39a05881-6dec-4a86-85be-b56a6ba72ecf"/>
+				<imageExpression><![CDATA["E:\\java\\skincare\\src\\Icon\\icons8-skincare-.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="72" y="15" width="63" height="10" uuid="5c52736a-5e0f-4513-92c0-165b56d85a71"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdetailorder_idpembayaran}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="172" height="1" uuid="59165f58-ad62-4b4e-ae64-511c9c2c9564"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="15" width="76" height="10" uuid="7f89db1d-7877-495a-b53c-991bc5a9c54b"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Penjualan      :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="5" width="44" height="10" uuid="144bb3de-eeee-4595-bf00-dfb518e13333"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbpembayaran_tanggal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="25" width="76" height="10" uuid="6e2b9796-f393-4a74-b286-8d107ff63523"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Kasir             :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="25" width="100" height="10" uuid="638546d7-22e4-48bb-bb5c-d21f684505db"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbpembayaran_kasir}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="5" width="76" height="10" uuid="37541eb0-88fb-4518-b04d-04c7714bef4a"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Tanggal         :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="5" width="52" height="10" uuid="808e749b-6423-4bc7-ac79-3ed2407462fd"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{jam1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="13" width="85" height="12" uuid="036a5efc-8b28-4ad1-bbbb-6208f6e18e97"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdetailorder_qty} + " x " + $F{tbdetailorder_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="13" width="71" height="12" uuid="e7798d73-f747-48e5-ac37-c273ffc93668"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdetailorder_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="119" height="13" uuid="a5b21fdb-d93c-4d14-92e9-ab181e5fbac0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbdetailorder_namaproduk}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="122" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="51" width="71" height="10" uuid="99372a7d-7ab4-4339-a615-c2d38fd4e1be"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbpembayaran_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="21" width="55" height="10" uuid="6ed56bed-8387-496c-be6b-b5078f0693c0"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbpembayaran_diskon} + " %"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="31" width="78" height="10" uuid="fcd62341-7f97-416f-bff0-c99b4dc68beb"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grand Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="78" height="10" uuid="18d0e69d-dcd9-45b5-85a6-facf5f400e05"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Diskon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="51" width="78" height="10" uuid="2f620c5f-af6d-4d17-a661-3be500fa8154"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="9" width="78" height="10" uuid="f93d0e10-273f-4621-87d1-9596fbdb4d91"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Subtotal         ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="62" width="78" height="10" uuid="84dee7fd-5d4d-444b-9afd-70981a186b00"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[Kembali]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="62" width="71" height="10" uuid="e3793fff-fe4e-4c5c-849b-ebe6303fa34d"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbpembayaran_kembali}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="83" width="172" height="1" uuid="3e69c360-9c5e-4851-92bc-8aa3b72dec28"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="14" y="84" width="139" height="15" uuid="3f2dc7e0-fc91-443f-b1a4-091ae1046afe"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[~ Terimakasih Banyak ~]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="172" height="1" uuid="4f27abb2-ed65-422a-8497-a02e84c1002d"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
